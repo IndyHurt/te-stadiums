@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Metropolitan Area');
+        data.addColumn('number', 'Stadiums');
+        data.addColumn('number', 'with Parking');
+		    data.addColumn('number', 'with Parking & Parking Aisles');
+        data.addRows([
+          ['Arlington, TX',  {v: 5, f: '5'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
+          ['Atlanta, GA',   {v: 31, f: '31'}, {v: .26, f: '26%'}, {v: .10, f: '10%'}],
+          ['Detroit, MI', {v: 216, f: '216'}, {v: .27, f: '27%'}, {v: .11, f: '11%'}],
+          ['East Rutherford, NJ',   {v: 3, f: '3'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
+          ['Houston, TX',  {v: 61, f: '61'}, {v: .72, f: '72%'}, {v: .26, f: '26%'}],
+          ['Indianapolis, IN',   {v: 12, f: '12'}, {v: .92, f: '92%'}, {v: .67, f: '67%'}],
+          ['Jacksonville, FL', {v: 6, f: '6'}, {v: .83, f: '83%'}, {v: .33, f: '33%'}],
+          ['Los Angeles, CA',   {v: 71, f: '71'}, {v: .54, f: '54%'}, {v: .23, f: '23%'}],
+          ['Miami, FL',  {v: 56, f: '56'}, {v: .43, f: '43%'}, {v: .09, f: '9%'}],
+          ['Minneapolis, MN',   {v: 44, f: '44'}, {v: .39, f: '39%'}, {v: .20, f: '20%'}],
+          ['New Orleans, LA', {v: 9, f: '9'}, {v: .22, f: '22%'}, {v: .11, f: '11%'}],
+          ['Phoenix, AZ',   {v: 73, f: '73'}, {v: .30, f: '30%'}, {v: .16, f: '16%'}],
+          ['San Diego, CA',   {v: 16, f: '16'}, {v: .75, f: '75%'}, {v: .06, f: '6%'}],
+          ['San Francisco Bay Area, CA', {v: 50, f: '50'}, {v: .40, f: '40%'}, {v: .14, f: '14%'}],
+          ['Tampa, FL',   {v: 22, f: '22'}, {v: .64, f: '64%'}, {v: .32, f: '32%'}]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: false, width: '570', height: '300'});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="table_div"></div>
+  </body>
+</html>

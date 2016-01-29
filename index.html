@@ -2,27 +2,132 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Te-stadiums by IndyHurt</title>
+    <title>Tailgate Mania</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Metropolitan Area');
+        data.addColumn('number', 'Stadiums');
+        data.addColumn('number', 'with Parking');
+        data.addColumn('number', 'with Parking & Parking Aisles');
+        data.addRows([
+          ['Arlington, TX',  {v: 5, f: '5'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
+          ['Atlanta, GA',   {v: 31, f: '31'}, {v: .26, f: '26%'}, {v: .10, f: '10%'}],
+          ['Detroit, MI', {v: 216, f: '216'}, {v: .27, f: '27%'}, {v: .11, f: '11%'}],
+          ['East Rutherford, NJ',   {v: 3, f: '3'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
+          ['Houston, TX',  {v: 61, f: '61'}, {v: .72, f: '72%'}, {v: .26, f: '26%'}],
+          ['Indianapolis, IN',   {v: 12, f: '12'}, {v: .92, f: '92%'}, {v: .67, f: '67%'}],
+          ['Jacksonville, FL', {v: 6, f: '6'}, {v: .83, f: '83%'}, {v: .33, f: '33%'}],
+          ['Los Angeles, CA',   {v: 71, f: '71'}, {v: .54, f: '54%'}, {v: .23, f: '23%'}],
+          ['Miami, FL',  {v: 56, f: '56'}, {v: .43, f: '43%'}, {v: .09, f: '9%'}],
+          ['Minneapolis, MN',   {v: 44, f: '44'}, {v: .39, f: '39%'}, {v: .20, f: '20%'}],
+          ['New Orleans, LA', {v: 9, f: '9'}, {v: .22, f: '22%'}, {v: .11, f: '11%'}],
+          ['Phoenix, AZ',   {v: 73, f: '73'}, {v: .30, f: '30%'}, {v: .16, f: '16%'}],
+          ['San Diego, CA',   {v: 16, f: '16'}, {v: .75, f: '75%'}, {v: .06, f: '6%'}],
+          ['San Francisco Bay Area, CA', {v: 50, f: '50'}, {v: .40, f: '40%'}, {v: .14, f: '14%'}],
+          ['Tampa, FL',   {v: 22, f: '22'}, {v: .64, f: '64%'}, {v: .32, f: '32%'}]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('stadium_table_div'));
+
+        table.draw(data, {showRowNumber: false});
+      }
+    </script>
+
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Te-stadiums</h1>
-      <h2 class="project-tagline">Simple visualization of OpenStreetMap stadiums that need parking enhancements to encourage edits.</h2>
+      <h1 class="project-name">Tailgate Mania</h1>
+      <h2 class="project-tagline">Simple visualization of OpenStreetMap stadiums that need enhancements to encourage edits.</h2>
       <a href="https://github.com/IndyHurt/te-stadiums" class="btn">View on GitHub</a>
-      <a href="https://github.com/IndyHurt/te-stadiums/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/IndyHurt/te-stadiums/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-      <p>Tailgate Mania!</p>
+      <h1>
+<a id="maxspeed" class="anchor" href="#maxspeed" aria-hidden="true"><span class="octicon octicon-link"></span></a>When parking lots become party destinations...</h1>
+
+<p>Welcome to our <b>Targeted Editing</b> series where today you can cheer on your favorite sports team, or make <a href="http://www.openstreetmap.org">OpenStreetMap</a> data supreme! (Both take about the same amount of time.)</p>
+
+<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!
+
+<p>Read on for some basic uses for parking areas and parking aisles, and where you can check to see if you can use your local knowlege to add some of these features where they are needed.</p>
+
+<ol style="list-style-type:disc">
+        <li><b>How are parking areas and parking aisles used?</b>
+          <p></p>
+            <ol>
+                <li>Help with search.  Finding parking is often a big part of trip planning.</li>  
+                <p></p> 
+                <li>Help with routing.  While your final destination may be a point of interest, you are likely driving to that location's associated parking area.  When parking areas also have parking aisles connected to the road network, they can be used to route drivers in and out of parking areas.</li>  
+                <p></p> 
+                <li>Help with map display.  Parking lots are valuable features that drivers rely on, and parking aisles look beautiful on a map.</li> 
+                <p></p>
+            </ol>
+        </li>
+        <p></p>
+        <li><b>We are missing some parking areas and parking aisles here!</b>
+
+            <p></p>
+            <ul>
+                <li>Check out this table of metro areas that have hosted Super Bowl games in the United States:</li>
+                <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
+                <li>Looks like we have a fair number of stadiums, but we could definitely use some additional parking areas and parking aisles.</li>
+            </ul>
+        </li>
+        <p></p>
+        <li><b>How you can help improve stadium parking:</b>
+            <p></p>
+            <ol>
+                <li>Hover over one of the bright blue highlighted stadiums to bring up an info bubble with links to editing tools that can be used to add features.  These highlighted stadiums are missing parking aisles.</li>
+                <p>
+                <iframe width="100%" height="400px" src="map/embed.html?stadiums"></iframe>
+                <br>
+                ( <a href="map/?stadiums" target="_blank">Open this map in a new tab ➹</a> )
+                </p> 
+                 
+                <p></p> 
+                  <ul>See the wiki pages for <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking">amenity=parking</a>, <a href="http://wiki.openstreetmap.org/wiki/Tag:service%3Dparking_aisle">service=parking_aisle</a>, and <a href="http://wiki.openstreetmap.org/wiki/Key:oneway">oneway</a>.</ul>
+                <p></p> 
+                  <ul>oneway=yes can be added to parking aisles when the flow of traffic is restricted to one direction.  The direction will be the direction in which the parking aisle is digitized.</ul>
+                <p></p>
+                  <ul>For existing parking aisles, if the direction is incorrect, use the “reverse way” tool in iD to reverse the direction of the line to match the flow of oneway traffic.  This may also require adding additional nodes to the way to ensure that tags are applied to the appropriate segments.</ul>  
+                <p></p>
+                  <ul>Last but not least, make sure parking aisles are connected to the road network in the appropriate locations.</ul>  
+                <p></p>
+                  <ul>Including your sources with the <a href="https://wiki.openstreetmap.org/wiki/Key:source">source</a> key is incredibly helpful.  This includes the imagery you used to trace features, and any authoritative websites as long as they allow their use for this purpose.</ul>
+                <p></p> 
+                  <ul>(If you find stadium that appears to have a parking area and parking aisles, but it&#39;s still highlighted, you may have found a duplicate, or some other interesting tagging variation.  Improving those is a topic for another post...)</ul>
+                <p></p>
+                <li>Not familiar with the San Francisco Bay Area?  Search for your home town or one near it and pan over to an area you know.</li>
+                <p></p>
+                <li>Need instructions on how to edit with iD?  Here are some outstanding tutorials from LearnOSM, the OpenStreetMap wiki, and the United States Department of State&#39;s Humanitarian Information Unit:</li>
+                    <p></p>
+                    <ol>
+                      <li><a href="http://learnosm.org/en/">LearnOSM</a></li>
+                      <li><a href="http://wiki.openstreetmap.org/wiki/Beginners'_guide">OSM Beginners' Guide</a></li>
+                      <li><a href="http://mapgive.state.gov/learn-to-map/">MapGive Learn to Map</a></li>
+                    </ol>  
+                <p></p>
+                <l1>Are you a mapping wiz and interested in a more advanced editor?  Try out <a href="https://josm.openstreetmap.de">JOSM</a> with <a href="https://www.mapbox.com/blog/osm-mapping-guide/">excellent documentation</a> from Mapbox.</li>
+                  <p></p>
+                  Thanks, and please check back soon for hte next in our series!
+
+            </ol>
+        </li>
+    </ol>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/IndyHurt/te-stadiums">Te-stadiums</a> is maintained by <a href="https://github.com/IndyHurt">IndyHurt</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/IndyHurt/te-stadiums">te-stadiums</a> is maintained by <a href="https://github.com/IndyHurt">IndyHurt</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
