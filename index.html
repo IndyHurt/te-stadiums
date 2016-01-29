@@ -21,10 +21,8 @@
         data.addColumn('number', 'with Parking');
         data.addColumn('number', 'with Parking & Parking Aisles');
         data.addRows([
-          ['Arlington, TX',  {v: 5, f: '5'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
           ['Atlanta, GA',   {v: 31, f: '31'}, {v: .26, f: '26%'}, {v: .10, f: '10%'}],
           ['Detroit, MI', {v: 216, f: '216'}, {v: .27, f: '27%'}, {v: .11, f: '11%'}],
-          ['East Rutherford, NJ',   {v: 3, f: '3'}, {v: 0, f: '0%'}, {v: 0, f: '0%'}],
           ['Houston, TX',  {v: 61, f: '61'}, {v: .72, f: '72%'}, {v: .26, f: '26%'}],
           ['Indianapolis, IN',   {v: 12, f: '12'}, {v: .92, f: '92%'}, {v: .67, f: '67%'}],
           ['Jacksonville, FL', {v: 6, f: '6'}, {v: .83, f: '83%'}, {v: .33, f: '33%'}],
@@ -58,7 +56,7 @@
 
 <p>Welcome to our <b>Targeted Editing</b> series where today you can cheer on your favorite sports team, or make <a href="http://www.openstreetmap.org">OpenStreetMap</a> data supreme! (Both take about the same amount of time.)</p>
 
-<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 4,000 stadiums.  About 38% have parking areas, and only 17% have parking areas with parking_aisles, too.
+<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 4,000 stadiums.  About 38% have parking areas, and only 17% have parking areas with parking aisles, too.
 
 <p>Read on for some basic uses for parking areas and parking aisles, and where you can check to see if you can use your local knowlege to add some of these features where they are needed.</p>
 
@@ -79,9 +77,11 @@
 
             <p></p>
             <ul>
-                <li>Check out this table of metro areas that have hosted Super Bowl games over the years:</li>
+                <li>Check out this table of some metro areas that have hosted Super Bowl games over the years:</li>
                 <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
-                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
+                <p>Sort the columns by clicking the headers.  It's no surprise that Indianapolis has the highest percentage of stadiums with parking and parking aisles.  Sports culture there is strong!
+                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Regardless, could there really be 216 stadiums in that area?  It's questionable.  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
+                <p>The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql">queries</a> select all stadiums that are greater than 2,000 square meters, and parking areas that are within 100 meters of these stadiums.  These parking areas are also intersected with parking aisles to determine percentages.</p> 
             </ul>
         </li>
         <p></p>
