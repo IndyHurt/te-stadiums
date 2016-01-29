@@ -40,7 +40,7 @@
 
         var table = new google.visualization.Table(document.getElementById('stadium_table_div'));
 
-        table.draw(data, {showRowNumber: false});
+        table.draw(data, {showRowNumber: false, width: '80%'});
       }
     </script>
 
@@ -58,7 +58,7 @@
 
 <p>Welcome to our <b>Targeted Editing</b> series where today you can cheer on your favorite sports team, or make <a href="http://www.openstreetmap.org">OpenStreetMap</a> data supreme! (Both take about the same amount of time.)</p>
 
-<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!
+<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 4,000 stadiums.  About 38% have parking areas, and only 17% have parking areas with parking_aisles, too.
 
 <p>Read on for some basic uses for parking areas and parking aisles, and where you can check to see if you can use your local knowlege to add some of these features where they are needed.</p>
 
@@ -79,16 +79,16 @@
 
             <p></p>
             <ul>
-                <li>Check out this table of metro areas that have hosted Super Bowl games in the United States:</li>
+                <li>Check out this table of metro areas that have hosted Super Bowl games over the years:</li>
                 <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
-                <li>Looks like we have a fair number of stadiums, but we could definitely use some additional parking areas and parking aisles.</li>
+                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
             </ul>
         </li>
         <p></p>
         <li><b>How you can help improve stadium parking:</b>
             <p></p>
             <ol>
-                <li>Hover over one of the bright blue highlighted stadiums to bring up an info bubble with links to editing tools that can be used to add features.  These highlighted stadiums are missing parking aisles.</li>
+                <li>Hover over one of the bright blue highlighted stadiums to bring up an info bubble with links to editing tools that can be used to add features.</li>
                 <p>
                 <iframe width="100%" height="400px" src="map/embed.html?stadiums"></iframe>
                 <br>
@@ -102,12 +102,10 @@
                 <p></p>
                   <ul>For existing parking aisles, if the direction is incorrect, use the “reverse way” tool in iD to reverse the direction of the line to match the flow of oneway traffic.  This may also require adding additional nodes to the way to ensure that tags are applied to the appropriate segments.</ul>  
                 <p></p>
-                  <ul>Last but not least, make sure parking aisles are connected to the road network in the appropriate locations.</ul>  
+                  <ul>Make sure parking aisles are connected to the road network in the appropriate locations.</ul>  
                 <p></p>
                   <ul>Including your sources with the <a href="https://wiki.openstreetmap.org/wiki/Key:source">source</a> key is incredibly helpful.  This includes the imagery you used to trace features, and any authoritative websites as long as they allow their use for this purpose.</ul>
                 <p></p> 
-                  <ul>(If you find stadium that appears to have a parking area and parking aisles, but it&#39;s still highlighted, you may have found a duplicate, or some other interesting tagging variation.  Improving those is a topic for another post...)</ul>
-                <p></p>
                 <li>Not familiar with the San Francisco Bay Area?  Search for your home town or one near it and pan over to an area you know.</li>
                 <p></p>
                 <li>Need instructions on how to edit with iD?  Here are some outstanding tutorials from LearnOSM, the OpenStreetMap wiki, and the United States Department of State&#39;s Humanitarian Information Unit:</li>
