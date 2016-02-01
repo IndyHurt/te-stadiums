@@ -18,22 +18,23 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Metropolitan Area');
         data.addColumn('number', 'Stadiums');
-        data.addColumn('number', 'with Parking');
-        data.addColumn('number', 'with Parking & Parking Aisles');
+        data.addColumn('number', 'without Nearby Parking');
+        data.addColumn('number', 'without Nearby Parking Aisles');
         data.addRows([
-          ['Atlanta, GA',   {v: 31, f: '31'}, {v: .26, f: '26%'}, {v: .10, f: '10%'}],
-          ['Detroit, MI', {v: 216, f: '216'}, {v: .27, f: '27%'}, {v: .11, f: '11%'}],
-          ['Houston, TX',  {v: 61, f: '61'}, {v: .72, f: '72%'}, {v: .26, f: '26%'}],
-          ['Indianapolis, IN',   {v: 12, f: '12'}, {v: .92, f: '92%'}, {v: .67, f: '67%'}],
-          ['Jacksonville, FL', {v: 6, f: '6'}, {v: .83, f: '83%'}, {v: .33, f: '33%'}],
-          ['Los Angeles, CA',   {v: 71, f: '71'}, {v: .54, f: '54%'}, {v: .23, f: '23%'}],
-          ['Miami, FL',  {v: 56, f: '56'}, {v: .43, f: '43%'}, {v: .09, f: '9%'}],
-          ['Minneapolis, MN',   {v: 44, f: '44'}, {v: .39, f: '39%'}, {v: .20, f: '20%'}],
-          ['New Orleans, LA', {v: 9, f: '9'}, {v: .22, f: '22%'}, {v: .11, f: '11%'}],
-          ['Phoenix, AZ',   {v: 73, f: '73'}, {v: .30, f: '30%'}, {v: .16, f: '16%'}],
-          ['San Diego, CA',   {v: 16, f: '16'}, {v: .75, f: '75%'}, {v: .06, f: '6%'}],
-          ['San Francisco Bay Area, CA', {v: 50, f: '50'}, {v: .40, f: '40%'}, {v: .14, f: '14%'}],
-          ['Tampa, FL',   {v: 22, f: '22'}, {v: .64, f: '64%'}, {v: .32, f: '32%'}]
+          ['Arlington, TX',   {v: 5, f: '5'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
+          ['Atlanta, GA',   {v: 25, f: '25'}, {v: .52, f: '52%'}, {v: .68, f: '68%'}],
+          ['Detroit, MI', {v: 25, f: '25'}, {v: .28, f: '28%'}, {v: .80, f: '80%'}],
+          ['Houston, TX',  {v: 42, f: '42'}, {v: .21, f: '21%'}, {v: .62, f: '62%'}],
+          ['Indianapolis, IN',   {v: 10, f: '10'}, {v: .30, f: '30%'}, {v: .30, f: '30%'}],
+          ['Jacksonville, FL', {v: 6, f: '6'}, {v: 0, f: '0%'}, {v: .17, f: '17%'}],
+          ['Los Angeles, CA',   {v: 45, f: '45'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
+          ['Miami, FL',  {v: 25, f: '25'}, {v: .48, f: '48%'}, {v: .72, f: '72%'}],
+          ['Minneapolis, MN',   {v: 25, f: '25'}, {v: .28, f: '28%'}, {v: .48, f: '48%'}],
+          ['New Orleans, LA', {v: 8, f: '8'}, {v: .75, f: '75%'}, {v: .88, f: '88%'}],
+          ['Phoenix, AZ',   {v: 5, f: '5'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
+          ['San Diego, CA',   {v: 11, f: '11'}, {v: .55, f: '55%'}, {v: .64, f: '64%'}],
+          ['San Francisco Bay Area, CA', {v: 44, f: '44'}, {v: .36, f: '36%'}, {v: .70, f: '70%'}],
+          ['Tampa, FL',   {v: 15, f: '15'}, {v: .07, f: '07%'}, {v: .47, f: '47%'}]
         ]);
 
         var table = new google.visualization.Table(document.getElementById('stadium_table_div'));
@@ -80,8 +81,8 @@
                 <li>Check out this table of some metro areas that have hosted Super Bowl games over the years:</li>
                 <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
                 <p>Sort the columns by clicking the headers.  It's no surprise that Indianapolis has the highest percentage of stadiums with parking and parking aisles.  Sports culture there is strong!
-                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Regardless, could there really be 216 stadiums in that area?  It's questionable.  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
-                <p>The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql">queries</a> select all stadiums that are greater than 2,000 square meters, and parking areas that are within 100 meters of these stadiums.  These parking areas are also intersected with parking aisles to determine percentages.</p> 
+                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
+                <p>The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql">queries</a> select all stadiums that are greater than 2,000 square meters, and parking areas that are within 50 meters of these stadiums.  These parking areas are also intersected with parking aisles to determine percentages.</p> 
             </ul>
         </li>
         <p></p>
