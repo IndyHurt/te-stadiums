@@ -34,12 +34,12 @@
           ['Phoenix, AZ',   {v: 5, f: '5'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
           ['San Diego, CA',   {v: 11, f: '11'}, {v: .55, f: '55%'}, {v: .64, f: '64%'}],
           ['San Francisco Bay Area, CA', {v: 44, f: '44'}, {v: .36, f: '36%'}, {v: .70, f: '70%'}],
-          ['Tampa, FL',   {v: 15, f: '15'}, {v: .07, f: '07%'}, {v: .47, f: '47%'}]
+          ['Tampa, FL',   {v: 15, f: '15'}, {v: .07, f: '7%'}, {v: .47, f: '47%'}]
         ]);
 
         var table = new google.visualization.Table(document.getElementById('stadium_table_div'));
 
-        table.draw(data, {showRowNumber: false, width: '90%'});
+        table.draw(data, {showRowNumber: false, height: '100%', width: '90%'});
       }
     </script>
 
