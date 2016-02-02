@@ -18,23 +18,23 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Metropolitan Area');
         data.addColumn('number', 'Stadiums');
-        data.addColumn('number', 'without Nearby Parking');
-        data.addColumn('number', 'without Nearby Parking Aisles');
+        data.addColumn('number', 'with Nearby Parking');
+        data.addColumn('number', 'with Nearby Parking Aisles');
         data.addRows([
-          ['Arlington, TX',   {v: 5, f: '5'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
-          ['Atlanta, GA',   {v: 25, f: '25'}, {v: .52, f: '52%'}, {v: .68, f: '68%'}],
-          ['Detroit, MI', {v: 25, f: '25'}, {v: .28, f: '28%'}, {v: .80, f: '80%'}],
-          ['Houston, TX',  {v: 42, f: '42'}, {v: .21, f: '21%'}, {v: .62, f: '62%'}],
-          ['Indianapolis, IN',   {v: 10, f: '10'}, {v: .30, f: '30%'}, {v: .30, f: '30%'}],
-          ['Jacksonville, FL', {v: 6, f: '6'}, {v: 0, f: '0%'}, {v: .17, f: '17%'}],
-          ['Los Angeles, CA',   {v: 45, f: '45'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
-          ['Miami, FL',  {v: 25, f: '25'}, {v: .48, f: '48%'}, {v: .72, f: '72%'}],
-          ['Minneapolis, MN',   {v: 25, f: '25'}, {v: .28, f: '28%'}, {v: .48, f: '48%'}],
-          ['New Orleans, LA', {v: 8, f: '8'}, {v: .75, f: '75%'}, {v: .88, f: '88%'}],
-          ['Phoenix, AZ',   {v: 5, f: '5'}, {v: .40, f: '40%'}, {v: .60, f: '60%'}],
-          ['San Diego, CA',   {v: 11, f: '11'}, {v: .55, f: '55%'}, {v: .64, f: '64%'}],
-          ['San Francisco Bay Area, CA', {v: 44, f: '44'}, {v: .36, f: '36%'}, {v: .70, f: '70%'}],
-          ['Tampa, FL',   {v: 15, f: '15'}, {v: .07, f: '7%'}, {v: .47, f: '47%'}]
+          ['Arlington, TX',   {v: 5, f: '5'}, {v: .60, f: '40%'}, {v: .40, f: '60%'}],
+          ['Atlanta, GA',   {v: 25, f: '25'}, {v: .48, f: '52%'}, {v: .32, f: '68%'}],
+          ['Detroit, MI', {v: 25, f: '25'}, {v: .72, f: '72%'}, {v: .20, f: '20%'}],
+          ['Houston, TX',  {v: 42, f: '42'}, {v: .79, f: '79%'}, {v: .38, f: '38%'}],
+          ['Indianapolis, IN',   {v: 10, f: '10'}, {v: .70, f: '70%'}, {v: .70, f: '70%'}],
+          ['Jacksonville, FL', {v: 6, f: '6'}, {v: 100, f: '100%'}, {v: .83, f: '83%'}],
+          ['Los Angeles, CA',   {v: 45, f: '45'}, {v: .60, f: '60%'}, {v: .40, f: '40%'}],
+          ['Miami, FL',  {v: 25, f: '25'}, {v: .52, f: '52%'}, {v: .28, f: '28%'}],
+          ['Minneapolis, MN',   {v: 25, f: '25'}, {v: .72, f: '72%'}, {v: .52, f: '52%'}],
+          ['New Orleans, LA', {v: 8, f: '8'}, {v: .25, f: '25%'}, {v: .13, f: '13%'}],
+          ['Phoenix, AZ',   {v: 5, f: '5'}, {v: .60, f: '60%'}, {v: .40, f: '40%'}],
+          ['San Diego, CA',   {v: 11, f: '11'}, {v: .45, f: '45%'}, {v: .36, f: '36%'}],
+          ['San Francisco Bay Area, CA', {v: 44, f: '44'}, {v: .64, f: '64%'}, {v: .30, f: '30%'}],
+          ['Tampa, FL',   {v: 15, f: '15'}, {v: .93, f: '93%'}, {v: .53, f: '53%'}]
         ]);
 
         var table = new google.visualization.Table(document.getElementById('stadium_table_div'));
@@ -57,7 +57,7 @@
 
 <p>Welcome to our <b>Targeted Editing</b> series where today you can cheer on your favorite sports team, or make <a href="http://www.openstreetmap.org">OpenStreetMap</a> data supreme! (Both take about the same amount of time.)</p>
 
-<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 3,000 stadiums in the OpenStreetMap data.  All of them have parking areas nearby, and nearly 47% of those nearby parking areas have parking aisles, too!
+<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 3,000 stadiums in the OpenStreetMap data.  More than half of them have parking areas nearby, but there are still lots of opportunities to add parking aisles and connect them to the road network.
 
 <p>Read on for some basic uses for parking areas and parking aisles, and where you can check to see if you can use your local knowlege to add some of these features where they are needed.</p>
 
