@@ -717,7 +717,7 @@ layers:
                 visible: true
                 priority: 3
             text:
-                interactive: false
+                interactive: true
                 move_into_tile: true
                 priority: 4
                 anchor: bottom
@@ -729,22 +729,6 @@ layers:
                     fill: '#000000'
                     size: 12px
                     stroke: { color: aqua, width: 2 }
-        matched:
-            filter:
-                area: false
-            draw:
-                icons:
-                    sprite: stadium
-                    color: aqua
-                    visible: true
-                    priority: 1
-                text:
-                    offset: [[13,6px],[16,8px],[19,10px]]
-                    priority: 2
-                    anchor: bottom
-                    font:
-                        fill: black
-                        stroke: { color: '#00ffff', width: 4 }
     stadium-landuse-aois:
         data: { source: osm, layer: [landuse] }
         filter:
@@ -770,9 +754,9 @@ layers:
         filter:
             all:
                 - kind: minor_road
-                - highway: service #: [parking_aisle]
-            any:
-                - landuse_kind: [stadium,parking]
+                - service: [parking_aisle]
+#            any:
+#                - landuse_kind: [stadium,parking]
         draw:
             lines:
                 order: 43
