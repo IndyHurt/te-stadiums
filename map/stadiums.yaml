@@ -3,7 +3,7 @@
 cameras:
     camera1:
         type: perspective
-        position: [-121.970080, 37.403131, 13] # lon/lat for Santa Clara, CA at zoom 13
+        position: [-121.970080, 37.403131, 15] # lon/lat for Santa Clara, CA at zoom 15
 
 labels-global:
     - &text_visible_continent         true
