@@ -69,7 +69,7 @@
                 <p></p> 
                 <li>Help with routing.  While your final destination may be a point of interest, you are likely driving to that location's associated parking area.  When parking areas also have parking aisles connected to the road network, they can be used to route drivers in and out of parking areas.</li>  
                 <p></p> 
-                <li>Help with map display.  Parking lots are valuable features that drivers rely on, and parking aisles look beautiful on a map.</li> 
+                <li>Help with map display.  Parking lots are valuable features that drivers rely on, and parking aisles look beautiful on a map.  They provide helpful visual cues that part of the wayfinding process.</li> 
                 <p></p>
             </ol>
         </li>
@@ -80,9 +80,9 @@
             <ul>
                 <li>Check out this table of some metro areas that have hosted Super Bowl games over the years:</li>
                 <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
-                <p>Sort the columns by clicking the headers.  It's no surprise that Indianapolis has the highest percentage of stadiums with parking and parking aisles.  Sports culture there is strong!
-                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p>
-                <p>The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql">queries</a> select all stadiums that are greater than 2,000 square meters, and parking areas that are within 50 meters of these stadiums.  These parking areas are also intersected with parking aisles to determine percentages.</p> 
+                <p>Sort the columns by clicking the headers.  The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql#L2-L3">count of stadiums</a> includes all stadiums greater than 2,000 square meters so we can expand our evaluation beyond football, and the stadiums are checked for parking areas and parking aisles within 100 meters.</p>
+                <p>Most of the stadiums in the Florida cities had parking areas nearby!  The numbers start to drop off a bit when we start checking for parking aisles.  It may seem like the OpenStreetMap data for parking areas and parking aisles near stadiums is lacking quite a bit in some important markets, but the search tolerance of 100 meters will be too small in some areas, and the lack of parking aisles in some parking areas is unexpected in parking garages.</p>   
+                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  The Los Angeles and San Francisco Bay metro extracts are equally enormous.  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p> 
             </ul>
         </li>
         <p></p>
