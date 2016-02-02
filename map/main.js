@@ -165,13 +165,13 @@ map = (function () {
                 popup.style.left = (pixel.x + 0) + 'px';
                 popup.style.top = (pixel.y + 0) + 'px';
                 
-                if ( scene.selection.feature.properties.kind == 'aerodrome' && !scene.selection.feature.properties.area ) 
+                if ( scene.selection.feature.properties.kind == 'stadium' ) 
                 {
 	                popup.style.visibility = 'visible';
 	            }
                 popup.innerHTML = '<span class="labelInner">' + 'You found a stadium to enhance!' + '</span><br>';
-                popup.innerHTML += '<span class="labelInner">' + '<a target="_blank" href="' + url + '">Edit with iD ➹</a>' + '</span><br>';
-                popup.innerHTML += '<span class="labelInner">' + '<a target="_blank" href="' + josmUrl + '">Edit with JOSM ➹</a>' + '</span><br>';
+                popup.appendChild(createEditLinkElement(url, 'iD', 'Edit with iD ➹'));
+                popup.appendChild(createEditLinkElement(josmUrl, 'JOSM', 'Edit with JOSM ➹'));
             });
         });
 
@@ -179,8 +179,70 @@ map = (function () {
             info.style.visibility = 'hidden';
             popup.style.visibility = 'hidden';
         });
-
     }
+
+    function createEditLinkElement (url, type, label) {
+        var el = document.createElement('div');
+        var anchor = document.createElement('a');
+        el.className = 'labelInner';
+        anchor.href = url;
+        anchor.target = '_blank';
+        anchor.textContent = label;
+        anchor.addEventListener('click', function (event) {
+            trackOutboundLink(url, 'editing_residential_buildings', type);
+        }, false);
+        el.appendChild(anchor);
+        return el;
+    }
+
+    /**
+    * Function that tracks a click on an outbound link in Google Analytics.
+    * This function takes a valid URL string as an argument, and uses that URL string
+    * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+    * using 'navigator.sendBeacon' in browser that support it.
+    */
+    function trackOutboundLink (url, post_name, editor) {
+       // ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
+       ga('send', 'event', 'outbound', post_name, url, {
+         'transport': 'beacon',
+         // If opening a link in the current window, this opens the url AFTER
+         // registering the hit with Analytics. Disabled because here want the
+         // link to open in a new window, so this hit can occur in the current tab.
+         //'hitCallback': function(){document.location = url;}
+       });
+    }
+
+	function long2tile(lon,zoom) { return (Math.floor((lon+180)/360*Math.pow(2,zoom))); }
+	function lat2tile(lat,zoom)  { return (Math.floor((1-Math.log(Math.tan(lat*Math.PI/180) + 1/Math.cos(lat*Math.PI/180))/Math.PI)/2 *Math.pow(2,zoom))); }    
+
+    /***** Render loop *****/
+	
+	function addGUI () {
+		// Link to edit in OSM - hold 'e' and click
+		function onMapClick(e) {
+			if (key.shift) {
+				var url = 'https://www.openstreetmap.org/edit?';
+
+				if (scene.selection.feature && scene.selection.feature.id) {
+					url += 'way=' + scene.selection.feature.id;
+				}
+
+				if (scene.center) {
+					url += '#map=' + scene.baseZoom(scene.zoom) + '/' + scene.center.lat + '/' + scene.center.lng;
+				}
+
+				window.open(url, '_blank');
+			}
+
+ 			if (key.command) {
+				var url = 'http://vector.mapzen.com/osm/all/' + scene.tile_zoom + '/' + long2tile(e.latlng.lng,scene.tile_zoom)  + '/' + lat2tile(e.latlng.lat,scene.tile_zoom) + '.topojson?api_key=vector-tiles-HqUVidw';
+				window.open(url, '_blank');
+				//console.log( e );
+			}
+		}
+
+		map.on('click', onMapClick);		
+	}
 
     function inIframe () {
         try {
@@ -194,6 +256,7 @@ map = (function () {
     window.addEventListener('load', function () {
         // Scene initialized
         layer.on('init', function() {
+	        addGUI();
             initFeatureSelection();
             //console.log('1 map loc:', map_start_location, '\ncamera pos:', scene.camera.position);
             if (defaultpos && typeof scene.camera.position != "undefined") {
@@ -208,6 +271,4 @@ map = (function () {
     });
 
     return map;
-
 }());
-
