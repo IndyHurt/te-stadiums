@@ -736,6 +736,7 @@ layers:
                 - kind: [stadium]
         draw:
             polygons:
+                interactive: true
                 color: '#cbbbd7'
                 order: 10
     parking-landuse-aois-good:
@@ -747,6 +748,7 @@ layers:
                 - $zoom: { min: 15 }
         draw:
             polygons:
+                interactive: true
                 color: '#cbbbd7'
                 order: 13
     parking_aisle-lines-good:
@@ -791,6 +793,7 @@ layers:
                 - landuse_kind: [stadium]
         draw:
             polygons:
+                interactive: true
                 color: '#dd7a7a'
                 order: function() { if( $zoom < 17) { return 14; } else { return 12; } }
                 #extrude: function() { return feature.height || 20; }

@@ -167,9 +167,15 @@ map = (function () {
                 
                 if ( scene.selection.feature.properties.kind == 'stadium' ) 
                 {
-	                popup.style.visibility = 'visible';
+	                mz_kind = 'stadium'
+                    popup.style.visibility = 'visible';
 	            }
-                popup.innerHTML = '<span class="labelInner">' + 'You found a stadium to enhance!' + '</span><br>';
+                if ( scene.selection.feature.properties.kind == 'parking' ) 
+                {
+                    mz_kind = 'parking lot'
+                    popup.style.visibility = 'visible';
+                }
+                popup.innerHTML = '<span class="labelInner">' + 'You found a ' + mz_kind + ' to enhance!' + '</span><br>';
                 popup.appendChild(createEditLinkElement(url, 'iD', 'Edit with iD ➹'));
                 popup.appendChild(createEditLinkElement(josmUrl, 'JOSM', 'Edit with JOSM ➹'));
             });
