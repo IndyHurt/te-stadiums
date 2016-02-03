@@ -23,15 +23,15 @@
         data.addRows([
           ['Arlington, TX',   {v: 5, f: '5'}, {v: .60, f: '60%'}, {v: .40, f: '40%'}],
           ['Atlanta, GA',   {v: 25, f: '25'}, {v: .48, f: '48%'}, {v: .32, f: '32%'}],
-          ['Detroit, MI', {v: 25, f: '25'}, {v: .72, f: '72%'}, {v: .20, f: '20%'}],
+          ['Detroit, MI', {v: 24, f: '24'}, {v: .71, f: '71%'}, {v: .21, f: '21%'}],
           ['Houston, TX',  {v: 42, f: '42'}, {v: .79, f: '79%'}, {v: .38, f: '38%'}],
           ['Indianapolis, IN',   {v: 10, f: '10'}, {v: .70, f: '70%'}, {v: .70, f: '70%'}],
           ['Jacksonville, FL', {v: 6, f: '6'}, {v: 100, f: '100%'}, {v: .83, f: '83%'}],
-          ['Los Angeles, CA',   {v: 45, f: '45'}, {v: .60, f: '60%'}, {v: .40, f: '40%'}],
+          ['Los Angeles, CA',   {v: 46, f: '46'}, {v: .61, f: '61%'}, {v: .39, f: '39%'}],
           ['Miami, FL',  {v: 25, f: '25'}, {v: .52, f: '52%'}, {v: .28, f: '28%'}],
           ['Minneapolis, MN',   {v: 25, f: '25'}, {v: .72, f: '72%'}, {v: .52, f: '52%'}],
           ['New Orleans, LA', {v: 8, f: '8'}, {v: .25, f: '25%'}, {v: .13, f: '13%'}],
-          ['Phoenix, AZ',   {v: 5, f: '5'}, {v: .60, f: '60%'}, {v: .40, f: '40%'}],
+          ['Phoenix, AZ',   {v: 25, f: '25'}, {v: .92, f: '92%'}, {v: .60, f: '60%'}],
           ['San Diego, CA',   {v: 11, f: '11'}, {v: .45, f: '45%'}, {v: .36, f: '36%'}],
           ['San Francisco Bay Area, CA', {v: 44, f: '44'}, {v: .64, f: '64%'}, {v: .30, f: '30%'}],
           ['Tampa, FL',   {v: 15, f: '15'}, {v: .93, f: '93%'}, {v: .53, f: '53%'}]
@@ -53,43 +53,45 @@
 
     <section class="main-content">
       <h1>
-<a id="maxspeed" class="anchor" href="#maxspeed" aria-hidden="true"><span class="octicon octicon-link"></span></a>When parking lots become party destinations...</h1>
+<a id="maxspeed" class="anchor" href="#maxspeed" aria-hidden="true"><span class="octicon octicon-link"></span></a>When parking lots become celebration destinations...</h1>
 
 <p>Welcome to our <b>Targeted Editing</b> series where today you can cheer on your favorite sports team, or make <a href="http://www.openstreetmap.org">OpenStreetMap</a> data supreme! (Both take about the same amount of time.)</p>
 
-<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!  In North America, there are well over 3,000 stadiums in the OpenStreetMap data.  Nearly half of them have parking areas nearby, but there are still lots of opportunities to add parking aisles and connect them to the road network.
+<p>Here in San Francisco, <a href="https://whosonfirst.mapzen.com/spelunker/id/420561633/">Super Bowl City</a> is attracting football fans from far and wide.  Firing up a barbecue grill in a stadium parking lot as part of a tailgate party is an American pastime.  Whether you are here in the Bay Area for the game, or you have plans to attend games at other stadiums this year, you are going to appreciate being able to find the parking areas on a map!</p>  
 
-<p>Read on for some basic uses for parking areas and parking aisles, and where you can check to see if you can use your local knowlege to add some of these features where they are needed.</p>
+<p>In North America, there are well over 3,000 stadiums in the OpenStreetMap data.  Nearly half of them have parking areas nearby, but there are still lots of opportunities to add parking aisles and connect them to the road network.</p>
+
+<p>Read on for some basic uses for parking features, and where you can check to see if you can use your <b>local knowlege</b> to add some of these features where they are needed.</p>
 
 <ol style="list-style-type:disc">
-        <li><b>How are parking areas and parking aisles used?</b>
+        <li><b>How are parking areas, parking aisles, and access points used?</b>
           <p></p>
             <ol>
                 <li>Help with search.  Finding parking is often a big part of trip planning.</li>  
                 <p></p> 
-                <li>Help with routing.  While your final destination may be a point of interest, you are likely driving to that location's associated parking area.  When parking areas also have parking aisles connected to the road network, they can be used to route drivers in and out of parking areas.</li>  
+                <li>Help with routing.  While your final destination may be a point of interest, you are likely driving to that location's associated parking area. When parking areas also have an access point, it can be a great place to set as a destination because drivers know what to do once they arrive at a parking lot. In the absence of access points, parking aisles connected to the road network can be used for similar purposes.</li>  
                 <p></p> 
-                <li>Help with map display.  Parking lots are valuable features that drivers rely on, and parking aisles look beautiful on a map.  They provide helpful visual cues that are part of the wayfinding process.</li> 
+                <li>Help with map display.  Parking lots are valuable features that drivers rely on, and parking aisles look beautiful on a map. They provide helpful visual cues that are part of the wayfinding process.</li> 
                 <p></p>
             </ol>
         </li>
         <p></p>
-        <li><b>We are missing some parking areas and parking aisles here!</b>
+        <li><b>We are missing some parking areas and parking features here!</b>
 
             <p></p>
             <ul>
                 <li>Check out this table of some metro areas that have hosted Super Bowl games over the years:</li>
                 <div id="stadium_table_div" style="width: 100%; height: 500px;"></div>
                 <p>Sort the columns by clicking the headers.  The <a href="https://github.com/IndyHurt/poi-stats/blob/gh-pages/queries/stadium_parking.sql#L2-L3">count of stadiums</a> includes all stadiums greater than 2,000 square meters so we can expand our evaluation beyond football, and the stadiums are checked for parking areas and parking aisles within 100 meters.</p>
-                <p>Most of the stadiums in the Florida cities had parking areas nearby!  The numbers start to drop off a bit when we start checking for parking aisles.  It may seem like the OpenStreetMap data for parking areas and parking aisles near stadiums is lacking quite a bit in some important markets, but there is more to consider.  The search tolerance of 100 meters will be too small in some areas.  Additionally, the lack of parking aisles in parking areas tagged as parking garages is not uncommon.</p>   
-                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large.  For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor!  The Los Angeles and San Francisco Bay metro extracts are equally enormous.  Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p> 
+                <p>Most of the stadiums in the Florida cities had parking areas nearby! The numbers start to drop off a bit when we start checking for parking aisles. It may seem like the OpenStreetMap data for parking areas and parking aisles near stadiums is lacking quite a bit in some important markets, but there is more to consider. The search tolerance of 100 meters will be too small in some areas. Additionally, the lack of parking aisles in parking areas tagged as parking garages is not uncommon.</p>   
+                <p>The data comes from our <a href="https://mapzen.com/data/metro-extracts/">metro extracts</a> and some of the extracts are very large. For instance, the metro extract for Detroit extends north beyond Flint, and west beyond Ann Arbor! The Los Angeles and San Francisco Bay metro extracts are equally enormous. Bounding boxes can be used to trim down the analysis, but when so many stadiums are just outside of their namesake city limits, larger areas are a welcome option.</p> 
             </ul>
         </li>
         <p></p>
         <li><b>How you can help improve stadium parking:</b>
             <p></p>
             <ol>
-                <li>Hover over one of the bright blue highlighted stadiums to bring up an info bubble with links to editing tools that can be used to add features.</li>
+                <li>Here is a map highlighting stadiums. Hover over one of the bright blue highlighted stadium icons or a parking area to bring up an info bubble with links to editing tools that can be used to add features. We have made the existing parking areas a light purple on the map so it is easier to see where parking aisles might be missing. Remember, some of the parking areas <b>might</b> be parking structures.</li>
                 <p>
                 <iframe width="100%" height="400px" src="map/embed.html?stadiums"></iframe>
                 <br>
@@ -97,19 +99,21 @@
                 </p> 
                  
                 <p></p> 
-                  <ul>See the wiki pages for <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking">amenity=parking</a>, <a href="http://wiki.openstreetmap.org/wiki/Tag:service%3Dparking_aisle">service=parking_aisle</a>, and <a href="http://wiki.openstreetmap.org/wiki/Key:oneway">oneway</a>.</ul>
+                  <ul>See the wiki pages for <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking">amenity=parking</a>, <a href="http://wiki.openstreetmap.org/wiki/Tag:service%3Dparking_aisle">service=parking_aisle</a>, <a href="http://wiki.openstreetmap.org/wiki/Key:oneway">oneway</a>, and <a href="https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers">access=customers</a>.</ul>
                 <p></p> 
                   <ul>oneway=yes can be added to parking aisles when the flow of traffic is restricted to one direction.  The direction will be the direction in which the parking aisle is digitized.</ul>
                 <p></p>
                   <ul>For existing parking aisles, if the direction is incorrect, use the “reverse way” tool in iD to reverse the direction of the line to match the flow of oneway traffic.  This may also require adding additional nodes to the way to ensure that tags are applied to the appropriate segments.</ul>  
                 <p></p>
-                  <ul>Make sure parking aisles are connected to the road network in the appropriate locations.</ul>  
+                  <ul>Make sure parking aisles are connected to the road network in the appropriate locations.  To be <a href="http://wiki.openstreetmap.org/wiki/Unconnected_ways">connected</a>, two roads (or a road and a parking aisle) must share a node.</ul>  
                 <p></p>
-                  <ul>Including your sources with the <a href="https://wiki.openstreetmap.org/wiki/Key:source">source</a> key is incredibly helpful.  This includes the imagery you used to trace features, and any authoritative websites as long as they allow their use for this purpose.</ul>
-                <p></p> 
-                <li>Not familiar with the San Francisco Bay Area?  Search for your home town or one near it and pan over to an area you know.</li>
+                  <ul>If you know where the parking entrance is located, add a node at that location, make sure it is also connected to the road network, and tag it with access=customers.</ul>
                 <p></p>
-                <li>Need instructions on how to edit with iD?  Here are some outstanding tutorials from LearnOSM, the OpenStreetMap wiki, and the United States Department of State&#39;s Humanitarian Information Unit:</li>
+                  <ul>Last but not least, including your sources with the <a href="https://wiki.openstreetmap.org/wiki/Key:source">source</a> key is incredibly helpful.  This includes the imagery you used to trace features, and any authoritative websites as long as they allow their use for this purpose.</ul>
+                <p></p>  
+                  <li>Not familiar with the San Francisco Bay Area?  Search for your home town or one near it and pan over to an area you know.</li>
+                <p></p>
+                  <li>Need instructions on how to edit with iD?  Here are some outstanding tutorials from LearnOSM, the OpenStreetMap wiki, and the United States Department of State&#39;s Humanitarian Information Unit:</li>
                     <p></p>
                     <ol>
                       <li><a href="http://learnosm.org/en/">LearnOSM</a></li>
